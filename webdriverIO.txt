@@ -1,0 +1,269 @@
+
+
+
+WebdriverIO
+
+mkdir WebdriverioCucumberTS & cd WebdriverioCucumberTS 
+
+npm init or npm init -y----->to initialize the project in nodejs and to create package.json
+
+npm install @wdio/cli
+
+npx wdio config
+
+
+
+on local machine
+
+cucumber
+
+typescript
+
+default location for feature and step-definition files
+
+Y
+
+Y
+
+spec & allure
+
+chromedriver
+
+npx wdio wdio.conf.ts
+npx wdio --cucumberOpts.dryRun
+
+unexpected token 'export' error---------------
+Sol: In package.json put "type":"module"
+
+----------------------    
+
+SuperTest library
+
+npm install supertest --save-dev
+
+ 
+
+import { click, setText } from "../utils/comands.js";
+    
+
+class UsersPage {
+    private get url_textbox() { return $('#urlvalue')
+    private get ajax_btn() { return $('#submitajax'); }
+    private get success_elem() { return $('.alert-success'); }
+    private get status_text() { return ('#statuspre')
+    private get output_area() { return $('outputpre');}
+    
+async openApp(pageurl: string) {
+        await browser.url (pageurl)
+    }
+    async enterAPIurl(apiendpoint: string) {
+        await setText(this.url_textbox, apiendpoint)
+}
+    async clickOnAjaxBtn() {
+        await click(this.ajax_btn)
+     }
+    async getStatusText(): Promise<string> {
+        await (await this.success_elem).waitForDisplayed();
+        return (await this.status_text).getText()
+}
+async getOutputText(): Promise<string> {
+    return (await this.output_area).getText()
+}
+}
+export default new UsersPage()
+
+Enum: control user input and allow them only to use certain options.
+
+export enum APICalls
+               {
+     GET = "GET",
+     POST = "POST",
+     PUT = "PUT",
+    DELETE = "DELTE"
+    OPTIONS = "OPTIONS",
+    HEAD = "HEAD"
+
+}
+
+cucumber Tags: execute features or scenarios with tags matching the expression
+
+@Regression ----- wdio.conf----CucumberOpts>>tagExpression:'@Regression',
+
+           OR
+
+pass through command line
+
+npm test -- --cucumberOpts.tagExpression='@Regression'
+ 
+Test data based on ENV tag
+
+
+npm test -- --cucumberOpts.tagExpression='@DEV'
+
+Multiple environment:
+
+Feature: Test multiple environment
+    Scenario: Get app title
+        Given I open app url
+        Then I retrieve browser title
+
+
+
+ import { Given, Then } from '@cucumber/cucumber'
+ Given (/^I open app url$/, async () => {
+  await browser. maximizeWindow()
+  await browser.url('/')
+});
+ Then (/^I retrieve browser title$/, async () =>
+  const title = await browser.getTitle()
+  console.log("Application Title: ", title)
+ });
+
+const Google="https://www.google.co.in/"
+const Wiki="https://www.wikipedia.org/"
+
+let appBaseURL:string;
+if(process.env.ENV =='DEV'){appBaseURL=Google}
+else if(process.env.ENV=='QA'){appbaseURL=Wiki}
+else{console.log("please pass correct ENV variable:: Dev|QA")
+process.exit()
+}--------------------------------in wdio.conf
+
+in command line
+SET ENV=DEV--------------not in powershell,give this in command prompt
+
+npm test
+
+--------------------------------------
+Wait Types:
+
+waitForClickable
+waitForDisplayed
+waitForEnabled
+waitUntil
+waitForExist
+-------------------
+gherkin intellisesnse
+
+.vscode --folder
+settings.json---file
+
+{
+   "cucumberautocomplete.steps": ["test/step-definitions/*.ts"],
+   "cucumberautocomplete.strictGherkinCompletion": true 
+}
+
+
+npm install tsconfig-paths
+
+
+not powshell use cmd
+run----npm install -g npm-check-updates
+run---ncu (it will check dependencies in pacage.json)
+run---ncu -u  (it will update all the dependencies)
+run----npm install( it will update all the dependencies iin node modules)
+
+npm test -- --spec ./test/features/waitTypes.feature
+
+Feature: Test practise form
+    Scenario: Validate form data with json file
+        Given I am on form page "https://demoqa.com/automation-practice-form"
+        When I enter all mandate fields
+        #And Submits the form
+        #Then I should see "Thanks for submitting the form"
+---------------------------------------
+Organizing Test suites:
+create ---------
+suites :{
+      smoke:[
+            './test/features/smoke/*.feature',
+           ],
+          regression:[
+            './test/features/regression/*.feature',
+          ]
+}--in wdio.conf
+
+npx wdio run wdio.conf.ts --suite smoke
+
+npx wdio wdio.conf.ts --suite smoke
+
+npx wdio wdio.conf.ts --suite regression
+--------------------------------------------
+file download:
+cwd--current working directory
+
+import path from 'path';
+
+"goog:chromeOptions":{
+                 "prefs":{
+         "download.default_directory":path.join(process.cwd(),'downloads')
+}
+
+}
+
+Then (/^I validate downloaded file extension$/, async ()=> {
+     const extensions =['.jpg','.txt', '.pdf', '.png', '.json', '.jpeg']
+
+})
+------------------------------------------------------
+Allure Report:
+
+install some dependencies to generate allure report
+
+npm install @wdio/allure-reporter --save-dev ----if this dependency is not in package.json
+
+
+       
+ in reporters:---wdio.conf file paste this
+
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disablewebdriverScreenshotsReporting: true,
+        useCucumberStepReporter:true
+      }]
+
+
+npm i allure-commandline --save-dev
+
+allure generate [allure_output_dir] && allure open
+
+"report":"allure generate allure-results --clean && allure open"---------in scripts in pkg.json
+
+npm run report
+
+Attach screenshot on failure
+
+in wdio.conf>>hooks>>afterStep:async fn(){
+    if(!result.passed){
+        await browser.takeScreenshot();
+          }
+}
+
+npm install chromedriver@latest --if we want to update chromedriver version
+
+deleteDirectory('allure-results')----place this in onPrepare func in wdio.conf
+
+import report from '@wdio/allure-reporter' and in afterFeature:func
+
+report.addEnvironment("Browser","CHROME")
+report.addEnvironment("ENV URL",appBaseURL)
+report.addEnvironment("Platform",process.platform)
+-----------------------------------------
+
+"wdio-google":"npx wdio run wdio.conf.ts --CucumberOpts. tagExpression='@google'";
+
+-----------------------------------------------
+headless
+
+under capabilities section
+
+"goog:chromeOptions":{
+         args:[
+                '--headless',
+                '--disable-dev-shm-usage',
+                '--no-sanbox'
+]
+}
+
+

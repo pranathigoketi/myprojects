@@ -1,0 +1,157 @@
+INTRODUCTION TO PARTNER PORTAL:
+
+1. Partner Portal main page will be in  wiki(links)
+2. Partner portal is developed by frontier for all the integrated partners and non-integrated partners. 
+3. This is the portal given only for the partners but not for customers
+4. Frappy is the frontier API and initially we had frontier gateway API but and relaced with frappy API and frappy API are more robust than these frontier gateway API.
+5. Integrated partners are external partners where they use our API's.
+6. Non- Integrated partners use our UI. They dont need to access our API's and all.
+7. Major URL's and reference purposes need to go to wiki pages.
+8. Once we check into Kanban board all the stories will be there.
+9. We had 4 environments. We need to test on the QA and Dev also.
+10. Bottle rocket is the UI team and the Amigi team is API.
+11. We are testing both UI and API.
+12. Partenr Portal DT: https://ftr.com/display/QA/QA+partner+portal++DT.....We can download all the information and more than 50 links will be  there.
+13. Also we had partner portal test data and login credentials also available.
+14. Unpaid balances, credit balances all the scenarios will be in this page.
+15. We have challenger offers and also SQL queries and how to find the promotions using SQL queries.
+16. There will be some check out addresses and bank accounts, cards.
+17. We had seperate testing page even.
+18. Who tested and all will be in the release and update the same through stand up calls
+19. Also documents page is also there related to test cases and QA sign offs.
+20. we also had sauce labs tickets and also partner portal demos.
+21. Main page training repository: what ever the topics we are going to cover and and all will be updated in the training repository.
+22. In order to keep the emails in one all will be under Test Gmail. 
+23. Partner portal is an UI.....All the non integarted partner can login and start placing the orders.
+24. UI interacts with the frappi and interacts with the other API's.
+25. Whatever the services added by the customer we can see in DPI.
+26. The test environments for partner portal: Dev, Stage, QA, Stage2 and in between we had layers called QAT01, QAT02, QAT03, PPRD and the 3rd layer would be QAT01, QAT02, QAT03, PPRD and any of these will connect to these like PPRD can connect to Dev etc.
+27. Based upon the release the connection may change.
+28. Open partner portal: Based on the environment we need to choose the URL and enter the user ID and password.
+29. We had 5 users: FTR channel management(internal), FTR regional management(Internal), Partner Admin(external), Official management(external), Agents(external User)
+30. Without VPN we can connect as these are non integrated for krispy kreme partner ID.
+31. If we use the specified partner ID we will act as channel manager.
+32. Without getting deactivated the we need to login everyday or atleast for 15 days.
+33. For KT session:For adding User Id click on add new user and give the new user email>>continue>>give information<<1st name....
+34. Agent will not have access and rest 4 will have access as they were under admin.
+35. User KT session had created successfully.
+36. when we click on partner portal page we will land on production page.
+37. So, we need to give the environment in the URL so that we can create the accpount and change the temporary password will be sent to the respective email.
+38. Then we will receive the activated link email and we can create the new password and the new user is created under the krispy kreme.
+39. If we want to work with different partner ID no need to logout. Just go to change partner on the 3 dots and select the respected partner ID.
+40. Once the user id is created we cannot change where as we can change the other information.
+41. Change the URL into any environment on the main URL and update your password and welcome email. 
+42. DAY 2: Frontier env page<<Quote Quick view<< who ever created the quotes will be reflected.
+42. F(one) is the frontier knowldege base and very few will have access and all will not have the access for this.
+43. For search of quote: Quote Quick View<<new quote<<quote<<search<<quotev num<<date<<click on search.
+44. For Export and Import <<choose calender<<export quote<<excel file<<Data is seen in that quote.
+45. All the details and the screen shots are available in the How to create and all in Training partner portal repository.
+46. Also we can search by selecting the customer.
+47. Alos when we do servicibilty check the new quote will be created. Those quote will be reflected on Quote Quick View.If we submit the quote we will get detailed order number and if in case if you submit the middle of the quote creation it will not show any Quote number.
+48. What all the details we will give in the Servicibility check the same will be reflected on the Quote Quick page.
+49. If the quote is submitted the status will shown as Quote or Install pending.
+50. We had user stories even And click on Quote Quick One. If we go to that particular Quote Quick One then we can see what all the things were implemented.
+51. If the agent is logged in then we can see the quotes created by the agent. But the other profiles can view all the created quotes.
+52. UI user stories are BRS(Bottle rocket stories) and now the same we are using for our partner portal and the FA is Frontier.com(API) andv the same we are using for the Partner portal.
+53. For UI stories are BRS stories and FA is for API's. All FA stories are API stories.
+54. Here we have action class and where there will be 4 actions. These will be shown in open page quote.
+55. Preview and Resume the quote were implemented and change install, cancel were not implemented.
+56. We cannot resume the quote where the order number is given. We can resume the quote when the order number is not there.
+57. We can resume the quote when the customer name is given. We cannot resumen the quote once after it is submitted.
+58. Go to preview Quote: We can preview the quote and view what all the services were added, taxes etc on that page. If the customer want the total bill and all we can enter the email so that it will be going to the customer directly. Also, the quote is valid for 30 days.
+59. So, we need to generate the new quote again. If the customer wnated to resume the quote we can resume the same and give it to the customer.
+60. Click on the resume quote we directly land on the bi flow page.
+61. After 30 days the old quote will be deleted from frappy also even. 
+62. To create the New quote: Click on the Quote<< give address<< lets go<<bi flow page will reflect<<Acquisition<< create quote<< the same will be created in the open page.
+63. So go the preview quote so that you can see what are the services were rendered top the customer and u can share the same quote.
+64. If we click on the resume quote the you can resume the quote from where you stopped as the order number is not created.
+65. If the action is pending we cannot resume the quote. We have 3 status like: Quote, POS ID, install pending.
+66. We can see all the quotes, status, actions etc in that page. If DPI oder number is there we cannot resume the quote.
+67. Frappi will also different statuses.
+68. If we want to check the servicbility give the proper address in the predictive serach bar. 
+69. New quote<<Add the address<<Let's Go<<New Quote will be created. if you want to check for the same quote throw the same address uin the search bar so that same quote will appear.
+70. To validate Quote: "Validate" CTA  will configure the product, which means taxes will come back and  it would update the customer’s details.
+71. If the voice is not there for address it will not be displayed.
+72. Whenever we start the testing with Quick Quote view we need to open the Network tab.
+73. Based on the orders the prices will be different.
+74. Based on addresses offers will be there and if the address is capable of having 2G speed then it will show 1G and so on....
+75. ACP- Affordable Connectivity program: It is the government rule and every company should follow the same where the rate is fixed by government.
+76. Low Income Profile: Enlad is the government site. 
+77. Enter the address and create the new quote.
+78. There are 2 types: Acquisition, Low income. Also there are tribal benefits. If the customer is registered for low income then the selected products will be given under low under.
+79. Acquisition is for normal people where as Low income is the option for the low income people.
+80. Click on Low Income<< Fill the form with valid details<< In part 2 they need to give the email and phone number where they had registered the email ID and phone number at ythe   
+81. If any one wants the tribal benefit then they can enroll for the tribal benefits. Part 3 will be the confirmation page.
+82. If the customer had application ID then there is no need to provide more details. If the application ID is not there more details should be provided.
+83. If the customer is eligible and had registered with the government then the Pop Up arises as "Successfully Registered".
+84. Once the customer is registered offers will available as per the eligibility.
+85. The products and pricing will be different for ACP.
+86. All step are same like Acquisition.
+87. When the order is confirmed then the email will come to Email ID.
+88. If the DPI is created for the order gthen the email will come to our given email ID along with DPI Number.
+89. Once the username, is created and click on Login and select the partenr ID.
+90. New User: give the valid credentials << click on login button << When user is created then the Partner ID is assigned<<Select the partner ID <<click on continue.
+91. This is the user managament wher the users are added and created.
+92. To Create USER ID: Login<<Add User<<give details<<select admin(FTR regional manager, FTR officer manager)<<save.
+93. EDIT the user:Login to Partner Portal<< Select the Partner ID you want to edit the user<<Click on 3 dots on actions menu<<Click on edit user and edit of your choices<<You can manually change the password <<Deactivate the user and click on continue<<Save.
+94. UPDATE user:Click on the name on the top right corner and click on update your profile<<Edit the first name, last name, Mobile Tn, offer attributes<<Click on change email to change the email ID<<Edit the user roles - we cannot add the higher hierarchies<<Change the password manually<<Once you click on send reset password email so that you receive reset link<<Save.
+95. Deactivate and Reactivate user: Click on 3 dots actions menu to deactivate the user<<Click on continue on the deactivate user modal<<User deactivated message will be displayed on top of the screen.
+96. Reactivate:click on 3 dot action menu for the deactivated status profile and click on edit user<<On edit user page, click on reactivate user<<Click on continue on reactivate user modal<<Once you click on continue<< Password reset email will be received - click on the reset link to update the password<<enter the new password and confirm new password to reset the password.
+97. Quote quick view: After clicking on Quote Quick View in user management page. we enter the quote quick view page, we search for a existing quote, create a new quote and export the data we need locally.
+Search quote: We can search for quote on the basis of Quote Number or with Customer name. For either of the option , its required to apply range filters by selecting From Date and To Date option, but the selection only allows to be in the range of 3 months. 
+Export data option: By clicking on Export Report button we can export the report results to a CSV type flat file 
+Create Quote: We can create a new quote by clicking on New quote button
+We can Resume an existing quote or can preview an existing quote by clicking on the options icon under the Actions column.
+98. Servicibility Check: To search for an address and check the products available, one must need to enter the address in the address filed, with the help of predictive search feature, all the similar addresses as per the entered text will be populated and we can select the corresponding address and click on lets go.
+If the address has already been provided with the services. Then a labelled as follows: There is already the frontier service at this address----Yes, Customer is moving, No, Cutomer is not moving.
+>>>If we select the No, customer is not moving the following modal will be displayed, If Customer is moving to that address, , CTA "Yes, I'm moving", Agent will be redirected to Buy Flow where Agent can selects Products to create and submit the Quote 
+>>>If an order for the service has been requested for an address, the following screenshot is displayed
+>>>If there existing quotes opened for an order for the address, the screenshot is as follows
+>>>If the searched address in not available for providing the service, the screenshot is as follows
+>>>HOA address scenario will display a message page stating that this address is under an HOA agreement 
+>>>PA/CLEC address scenario will display a message page stating that this address is handled by a dedicated Call Center
+99. When there are existing quotes available for an address, and if we need to make any modifications with respect to quote. We can make these modification at the open quotes page. After searching for an address, at the open quotes page, click on the options icon under the Actions column of the open quotes table.
+100. To resume a quote that been left at any step in the buyflow page we can click on the Resume quote option. We can resume a quote at any point in between the completion of a step. Once we click on resume option, we can see the respective quote at that particular step..
+101. To preview the quote, to check the information that been entered or to check for validations we can click on Preview Quote option..
+102. You can cancel any quote that has initiated by one's own profile and is not submitted. To cancel a quote select option icon under Actions column and select cancel from the drop down. A modal shown as below will be displayed and from the cancellation reason, we need to select one and click on continue. 
+103. Create ACP order with application ID:
+1) Login to partner portal with user ID and password
+2) Select the Partner ID on the team space page and click on continue
+3) Click on quote quick view page 
+4) Click on new quote -  enter the address and click on lets go
+5) Enter the customer info on buyflow page and click on low income / click on low income and enter the info in the form - It will work both ways
+6) select yes for application ID and enter the application ID number and DOB 
+7) Select the acknowledgement and click on submit application
+8) Banner will be displayed on top of the page as customer is eligible for ACP offer
+9) Select the products as per the scenario
+10) Select the disclaimer and select yes/no for the voice
+11) Select the Fsecure product based on the scenario and click on next
+12) Click on validate, preview and next
+13) step 1 is completed
+14) Enter the credit information and select the communication preferences and click on acknowledgment and continue
+15) Step 2 is completed
+16) Enroll/dont enroll in autopay based on the scenario and also enroll/dont enroll in paperless and click on next
+17) Step 3 is completed
+18) Notes to technician is mandatory and select the disclaimer and click on reserve the appointment
+19) Step 4 is completed
+20) Click on recap
+21) Select the terms and conditions and click on i agree
+22) Click on submit the quote 
+23) order is submitted successfully
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 

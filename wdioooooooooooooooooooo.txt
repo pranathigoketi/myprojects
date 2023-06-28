@@ -1,0 +1,4 @@
+(C:\Users\PranathiGoketi-Kairo\OneDrive - Kairos Technologies Inc\Documents\IO practice\test\specs\**\*.js)
+(C:\Users\PranathiGoketi-Kairo\OneDrive - Kairos Technologies Inc\Documents\IO practice\test\specs\pageobjects\**\*.ts)
+(C:\Users\PranathiGoketi-Kairo\OneDrive - Kairos Technologies Inc\Documents\IO practice\test\specs\step-definitions\steps.js)
+

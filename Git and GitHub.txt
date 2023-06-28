@@ -1,0 +1,5 @@
+Git:Git is the free open source distributed version control system that's resposible for everything GitHub related that happens locally on your computer.
+Git commands: 
+git init
+pull
+push
